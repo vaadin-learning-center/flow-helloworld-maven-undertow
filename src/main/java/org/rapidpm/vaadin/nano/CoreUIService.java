@@ -34,6 +34,7 @@ import com.vaadin.flow.server.startup.RouteRegistryInitializer;
 import com.vaadin.flow.server.startup.ServletDeployer;
 import io.undertow.Undertow;
 import io.undertow.server.handlers.PathHandler;
+import io.undertow.server.handlers.resource.ClassPathResourceManager;
 import io.undertow.servlet.Servlets;
 import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.DeploymentManager;
@@ -65,7 +66,7 @@ public class CoreUIService implements HasLogger {
                   .setContextPath("/")
                   .setDeploymentName("ROOT.war")
                   .setDefaultEncoding("UTF-8")
-                  .setResourceManager(new VaadinFlowResourceManager(classLoader))
+                  .setResourceManager(new ClassPathResourceManager(classLoader, "META-INF/resources/"))
                   .addServletContainerInitializer(
                       new ServletContainerInitializerInfo(RouteRegistryInitializer.class ,
                                                           setOfRouteAnnotatedClasses())
