@@ -46,7 +46,7 @@ import io.undertow.servlet.api.ServletContainerInitializerInfo;
 public class CoreUIService implements HasLogger {
 
   public static final String CORE_UI_SERVER_HOST_DEFAULT = "0.0.0.0";
-  public static final String CORE_UI_SERVER_PORT_DEFAULT = "80";
+  public static final String CORE_UI_SERVER_PORT_DEFAULT = "8080";
 
   public static final String CORE_UI_SERVER_HOST = "core-ui-server-host";
   public static final String CORE_UI_SERVER_PORT = "core-ui-server-port";
