@@ -1,1 +1,1 @@
-web: java -jar target/vaadin-app.jar
+web: java -jar target/vaadin-app.jar -Dcore-ui-server-port=$PORT
