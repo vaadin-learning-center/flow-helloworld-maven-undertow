@@ -19,6 +19,7 @@ import static io.undertow.Handlers.path;
 import static io.undertow.Handlers.redirect;
 import static java.lang.Integer.valueOf;
 import static java.lang.System.getProperty;
+import static java.lang.System.setProperty;
 import static java.util.Collections.singleton;
 import static org.rapidpm.frp.model.Result.failure;
 import static org.rapidpm.frp.model.Result.success;
@@ -69,10 +70,10 @@ public class CoreUIService implements HasLogger {
     CommandLine       cmd    = parser.parse(options, args);
 
     if( cmd.hasOption( CLI_HOST ) ) {
-      System.setProperty(CORE_UI_SERVER_HOST, cmd.getOptionValue( CLI_HOST ));
+      setProperty(CORE_UI_SERVER_HOST, cmd.getOptionValue( CLI_HOST ));
     }
     if( cmd.hasOption( CLI_PORT ) ) {
-      System.setProperty(CORE_UI_SERVER_PORT, cmd.getOptionValue( CLI_PORT));
+      setProperty(CORE_UI_SERVER_PORT, cmd.getOptionValue( CLI_PORT));
     }
 
     new CoreUIService().startup();
