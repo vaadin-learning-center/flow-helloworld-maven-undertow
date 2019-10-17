@@ -29,6 +29,7 @@ import java.util.Set;
 
 import javax.servlet.ServletException;
 
+import io.undertow.websockets.jsr.WebSocketDeploymentInfo;
 import org.apache.commons.cli.*;
 import org.rapidpm.dependencies.core.logger.HasLogger;
 import org.rapidpm.frp.model.Result;
@@ -93,6 +94,9 @@ public class CoreUIService implements HasLogger {
                                                           setOfRouteAnnotatedClasses())
                       )
                   .addListener(Servlets.listener(ServletDeployer.class));
+
+    final WebSocketDeploymentInfo webSocketDeploymentInfo = new WebSocketDeploymentInfo();
+    servletBuilder.addServletContextAttribute(WebSocketDeploymentInfo.ATTRIBUTE_NAME, webSocketDeploymentInfo);
 
     final DeploymentManager manager = Servlets
         .defaultContainer()

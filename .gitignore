@@ -1,3 +1,7 @@
+node/
+node_modules/
+
+
 .idea/*
 *.iml
 /modules/m001/_data/webdrivers/

@@ -19,7 +19,15 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>org.vaadintutorials</groupId>
+    <artifactId>vaadin-dependencies-v14</artifactId>
+    <version>2.0.0</version>
+  </parent>
+
   <modelVersion>4.0.0</modelVersion>
+
 
   <groupId>com.vaadin.tutorial</groupId>
   <artifactId>flow-helloworld-maven-undertow</artifactId>
@@ -82,7 +90,6 @@
     <rapidpm-logger-adapter.version>01.00.01-RPM</rapidpm-logger-adapter.version>
 
     <!--external-->
-    <vaadin.version>13.0.2</vaadin.version>
     <undertow.version>2.0.19.Final</undertow.version>
 
     <!--logging-->
@@ -91,13 +98,24 @@
   </properties>
 
 
+  <repositories>
+    <repository>
+      <name>bintray</name>
+      <id>bintray-vaadin-tutorials-maven</id>
+      <url>https://dl.bintray.com/vaadin-tutorials/maven</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
   <dependencyManagement>
     <dependencies>
       <!--Vaadin -->
       <dependency>
         <groupId>com.vaadin</groupId>
         <artifactId>vaadin-bom</artifactId>
-        <version>${vaadin.version}</version>
+        <version>${vaadin-v14.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -108,13 +126,13 @@
     <dependency>
       <groupId>org.rapidpm</groupId>
       <artifactId>rapidpm-logger-adapter</artifactId>
-      <version>${rapidpm-logger-adapter.version}</version>
+      <version>01.00.04-RPM</version>
     </dependency>
 
     <dependency>
       <groupId>org.rapidpm</groupId>
       <artifactId>rapidpm-functional-reactive</artifactId>
-      <version>${rapidpm-functional-reactive.version}</version>
+      <version>01.00.04-RPM</version>
     </dependency>
 
     <!--Infrastructure-->
@@ -130,30 +148,24 @@
       <version>${undertow.version}</version>
     </dependency>
 
-    <!--    <dependency>-->
-    <!--      <groupId>io.undertow</groupId>-->
-    <!--      <artifactId>undertow-websockets-jsr</artifactId>-->
-    <!--      <version>${undertow.version}</version>-->
-    <!--    </dependency>-->
-
-    <!--Vaadin -->
     <dependency>
-      <groupId>com.vaadin</groupId>
-      <artifactId>vaadin</artifactId>
+      <groupId>io.undertow</groupId>
+      <artifactId>undertow-websockets-jsr</artifactId>
+      <version>${undertow.version}</version>
     </dependency>
-
 
     <dependency>
       <groupId>com.vaadin</groupId>
       <artifactId>vaadin-lumo-theme</artifactId>
     </dependency>
-
     <dependency>
       <groupId>com.vaadin</groupId>
-      <artifactId>flow-client</artifactId>
-      <version>1.4.3</version>
+      <artifactId>vaadin-button-flow</artifactId>
     </dependency>
-
+    <dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin-ordered-layout-flow</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>commons-cli</groupId>
