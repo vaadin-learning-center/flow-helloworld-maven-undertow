@@ -82,7 +82,7 @@
     <rapidpm-logger-adapter.version>01.00.01-RPM</rapidpm-logger-adapter.version>
 
     <!--external-->
-    <vaadin.version>13.0.2</vaadin.version>
+    <vaadin.version>14.6.2</vaadin.version>
     <undertow.version>2.0.27.Final</undertow.version>
 
     <!--logging-->
