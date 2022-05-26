@@ -83,7 +83,7 @@
 
     <!--external-->
     <vaadin.version>13.0.2</vaadin.version>
-    <undertow.version>2.0.27.Final</undertow.version>
+    <undertow.version>2.2.11.Final</undertow.version>
 
     <!--logging-->
     <slf4j.version>1.7.25</slf4j.version>
